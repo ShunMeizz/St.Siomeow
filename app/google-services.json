@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "536126048072",
+    "project_id": "st-siomeow",
+    "storage_bucket": "st-siomeow.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:536126048072:android:b15e1939bc2f7436c8d57d",
+        "android_client_info": {
+          "package_name": "com.example.stsiomeow"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDl1j2oNyUYOYJLT_0-l0sYfX5mDaDdU_0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
