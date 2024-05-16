@@ -32,7 +32,7 @@ public class test2 extends AppCompatActivity {
                 String user = text_2.getText().toString();
 
                 HelperClass h = new HelperClass(user);
-                myRef.child(user);
+                myRef.child(user).setValue(h);
                 Toast.makeText(test2.this, "test success", Toast.LENGTH_SHORT).show();
 
                 Intent in = new Intent(test2.this, MainActivity.class);
