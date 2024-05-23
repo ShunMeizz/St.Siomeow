@@ -3,4 +3,6 @@
     <string name="text_view1">Name</string>
     <string name="plain_text1">Enter name</string>
     <string name="btnSubmit">Submit</string>
+    <string name="text_view2">Pass</string>
+    <string name="plain_text2">Enter pass</string>
 </resources>

@@ -1,13 +1,14 @@
 {
   "project_info": {
-    "project_number": "536126048072",
-    "project_id": "st-siomeow",
-    "storage_bucket": "st-siomeow.appspot.com"
+    "project_number": "51859710287",
+    "firebase_url": "https://stsiomeow-default-rtdb.firebaseio.com",
+    "project_id": "stsiomeow",
+    "storage_bucket": "stsiomeow.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:536126048072:android:b15e1939bc2f7436c8d57d",
+        "mobilesdk_app_id": "1:51859710287:android:a4138d8f51ed2676a8253a",
         "android_client_info": {
           "package_name": "com.example.stsiomeow"
         }
@@ -15,7 +16,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDl1j2oNyUYOYJLT_0-l0sYfX5mDaDdU_0"
+          "current_key": "AIzaSyBQgQ8qQbD2RWrz8aKDYwLUqU4awvwQe1Y"
         }
       ],
       "services": {
