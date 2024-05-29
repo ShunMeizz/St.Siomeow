@@ -21,8 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class LogInPage extends AppCompatActivity {
     //ALL VARIABLES NAMES STARTS WITH LIN aside from the Buttons
-    EditText linEmail;
-    EditText linPassword;
+    EditText linEmail, linPassword;
     Button loginSubmit, registerSubmit;
     CheckBox linrememberMe;
     FirebaseAuth auth;
