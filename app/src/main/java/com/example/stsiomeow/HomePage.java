@@ -1,5 +1,4 @@
 package com.example.stsiomeow;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -26,62 +25,62 @@ public class HomePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
-        menu = findViewById(R.id.iVMenu);
-        profile = findViewById(R.id.iVUser);
+        menu = findViewById(R.id.menu_bar);
+        profile = findViewById(R.id.user_profile);
 
-//        menu.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                showPopupMenu(view);
-//            }
-//        });
-//        profile.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(HomePage.this, UserProfile.class));
-//            }
-//        });
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showPopupMenu(view);
+            }
+        });
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomePage.this, UserProfile.class));
+            }
+        });
     }
-//    private void showPopupMenu(View view) {
-//        PopupMenu popupMenu = new PopupMenu(this, view);
-//        MenuInflater inflater = popupMenu.getMenuInflater();
-//        inflater.inflate(R.menu.choice_menu, popupMenu.getMenu());
-//        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-//            @Override
-//            public boolean onMenuItemClick(MenuItem item) {
-//                return handleMenuItemClick(item);
-//            }
-//        });
-//        popupMenu.show();
-//    }
-//    private boolean handleMenuItemClick(@NonNull MenuItem item) {
-//        switch(item.getItemId()) {
-//            case R.id.mHome:
-//                Toast.makeText(this, "Home Page", Toast.LENGTH_SHORT).show();
-//                startActivity(new Intent(HomePage.this, HomePage.class));
-//                return true;
-//            case R.id.cCremation:
-//                Toast.makeText(this, "Cremation Page", Toast.LENGTH_SHORT).show();
-//                startActivity(new Intent(HomePage.this, CremationProduct.class));
-//                return true;
-//            case R.id.cFuneralRite:
-//                Toast.makeText(this, "Funeral Rite", Toast.LENGTH_SHORT).show();
-//                startActivity(new Intent(HomePage.this, ImmediateNeedForm.class));
-//                return true;
-//            case R.id.cSendFlowers:
-//                Toast.makeText(this, "Send Flowers Page", Toast.LENGTH_SHORT).show();
-//                startActivity(new Intent(HomePage.this, SendFlowers.class));
-//                return true;
-//            case R.id.mOrbituary:
-//                Toast.makeText(this, "Death Archive Page", Toast.LENGTH_SHORT).show();
-//                startActivity(new Intent(HomePage.this, Orbituary.class));
-//                return true;
-//            case R.id.mLogOut:
-//                Toast.makeText(this, "Log Out", Toast.LENGTH_SHORT).show();
-//                finish();
-//                return true;
-//            default:
-//                return false;
-//        }
-//    }
+    private void showPopupMenu(View view) {
+        PopupMenu popupMenu = new PopupMenu(this, view);
+        MenuInflater inflater = popupMenu.getMenuInflater();
+        inflater.inflate(R.menu.choice_menu, popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                return handleMenuItemClick(item);
+            }
+        });
+        popupMenu.show();
+    }
+    private boolean handleMenuItemClick(@NonNull MenuItem item) {
+        switch(item.getItemId()) {
+            case R.id.mHome:
+                Toast.makeText(this, "Home Page", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(HomePage.this, HomePage.class));
+                return true;
+            case R.id.cCremation:
+                Toast.makeText(this, "Cremation Page", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(HomePage.this, CremationProduct.class));
+                return true;
+            case R.id.cFuneralRite:
+                Toast.makeText(this, "Funeral Rite", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(HomePage.this, ImmediateNeedForm.class));
+                return true;
+            case R.id.cSendFlowers:
+                Toast.makeText(this, "Send Flowers Page", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(HomePage.this, SendFlowers.class));
+                return true;
+            case R.id.mOrbituary:
+                Toast.makeText(this, "Death Archive Page", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(HomePage.this, DeathArchive.class));
+                return true;
+            case R.id.mLogOut:
+                Toast.makeText(this, "Log Out", Toast.LENGTH_SHORT).show();
+                finish();
+                return true;
+            default:
+                return false;
+        }
+    }
 }

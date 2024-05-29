@@ -3,6 +3,9 @@ package com.example.stsiomeow;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -25,6 +28,7 @@ public class LogInPage extends AppCompatActivity {
     Button loginSubmit, registerSubmit;
     CheckBox linrememberMe;
     FirebaseAuth auth;
+    private SharedPreferences sph;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,22 +39,35 @@ public class LogInPage extends AppCompatActivity {
         linrememberMe = (CheckBox) findViewById(R.id.cb_remember);
         registerSubmit = (Button) findViewById(R.id.btn_lsignup);
         auth = FirebaseAuth.getInstance();
+        sph = getSharedPreferences("RememberMePref", Context.MODE_PRIVATE);
 
         loginSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = linEmail.getText().toString().trim();
-                String password = linPassword.getText().toString().trim();
+                LoginUser();
+            }
+        });
+    }
 
-                if(TextUtils.isEmpty(email)){
-                    Toast.makeText(LogInPage.this, "Email field is empty!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if(TextUtils.isEmpty(password)){
-                    Toast.makeText(LogInPage.this, "Password field is empty!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+    private void LoginUser(){
+        String email = linEmail.getText().toString().trim();
+        String password = linPassword.getText().toString().trim();
+        Boolean rememberMe = linrememberMe.isChecked();
 
+        if(TextUtils.isEmpty(email) || TextUtils.isEmpty(password)){
+            Toast.makeText(LogInPage.this, "All fields are needed!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @SuppressLint("CommitPrefEdits")
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    if(linrememberMe.isChecked()){
+                        sph.edit().putBoolean("rememberMe", true);
+                    }
+                }
             }
         });
     }
