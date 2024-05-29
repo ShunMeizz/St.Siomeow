@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -39,39 +40,31 @@ public class test2 extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference("user");
                 String user = text_2.getText().toString().trim();
                 String pass = text_3.getText().toString().trim();
 
                 if(TextUtils.isEmpty(user)){
-                    Toast.makeText(test2.this, "No user", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(test2.this, "No User", Toast.LENGTH_SHORT).show();
                     return;
-                }
-                if(TextUtils.isEmpty(pass)){
-                    Toast.makeText(test2.this, "No pass", Toast.LENGTH_SHORT).show();
+                }if(TextUtils.isEmpty(pass)){
+                    Toast.makeText(test2.this, "No User", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-//                auth.createUserWithEmailAndPassword(user, pass).addOnCompleteListener(
-//                        new OnCompleteListener<AuthResult>() {
-//                            @Override
-//                            public void onComplete(@NonNull Task<AuthResult> task) {
-//                                if(task.isSuccessful()){
-//                                    Toast.makeText(test2.this, "test success", Toast.LENGTH_SHORT).show();
-//                                    Intent in = new Intent(test2.this, MainActivity.class);
-//                                    startActivity(in);
-//                                    finish();
-//                                } else{
-//                                    Toast.makeText(test2.this, "test failed", Toast.LENGTH_SHORT).show();
-//                                }
-//                            }
-//                        }
-//                );
-                HelperClass h = new HelperClass(user, pass);
-                myRef.child("user").setValue(h);
-//                myRef.setValue("Hello, World!");
-                Printer();
+                auth.createUserWithEmailAndPassword(user, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            FirebaseUser firebaseUser = auth.getCurrentUser();
+                            if(firebaseUser != null){
+                                String uid = firebaseUser.getUid();
+
+                                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                                DatabaseReference myRef = database.getReference().child(user);
+                            }
+                        }
+                    }
+                });
             }
         });
     }
