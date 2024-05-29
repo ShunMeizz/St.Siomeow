@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DeathArchive"
+    tools:ignore="MissingDefaultResource">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E8EFEFEF"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:padding="0dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="#FFFFFF"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/menu_bar"
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    app:srcCompat="@drawable/menu" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/siomeow_header"
+                    android:layout_weight="1"/>
+
+                <ImageView
+                    android:id="@+id/user_profile"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    app:srcCompat="@drawable/userprofile" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginBottom="-10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/form_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:text="Death Archive"
+                        android:textColor="#BF000000"
+                        android:textSize="27sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="20dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/shadow_all_sides"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/search_bar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/textview_border"
+                            android:hint="Find a loved one..."
+                            android:textSize="14sp" />
+
+                        <ImageButton
+                            android:id="@+id/search_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="-50dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@android:color/transparent"
+                            app:srcCompat="@drawable/loupe" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="30dp"
+                    android:paddingTop="-10dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|top"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/shadow_all_sides"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="190dp"
+                            android:layout_height="195dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/personimg" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtDisplayFullName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:letterSpacing="0.1"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="5dp"
+                                android:text="-fullname-"
+                                android:textColor="#6c2c1f"
+                                android:textSize="19sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtDeadDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="5dp"
+
+                                android:text="-birthdate- to -deathdate-" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1.5dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:background="#6c2c1f" />
+
+                            <TextView
+                                android:id="@+id/txtDeadAbout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:justificationMode="inter_word"
+                                android:paddingLeft="30dp"
+                                android:paddingRight="10dp"
+                                android:text="-fullname-, a beloved of -guardfullname-, passed away peacefully on -Date of Death-, at the age of -computation of deathdate and birthdate-...."
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1.5dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="#6c2c1f" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <Button
+                                    android:id="@+id/btnVisitDead"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="40dp"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#8BAEBE"
+                                    android:gravity="center"
+                                    android:text="⬅️" />
+
+                                <Button
+                                    android:id="@+id/btnSendflower"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="40dp"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#f5b5c8"
+                                    android:text="💮" />
+
+                                <Button
+                                    android:id="@+id/btnSendLove"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="40dp"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#FE897F"
+                                    android:text="❤️" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="30dp"
+                    android:paddingTop="-10dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|top"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/shadow_all_sides"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView211"
+                            android:layout_width="190dp"
+                            android:layout_height="195dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/personimg" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtDisplayFullName1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:letterSpacing="0.1"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="5dp"
+                                android:text="-fullname-"
+                                android:textColor="#6c2c1f"
+                                android:textSize="19sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtDeadDate1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="5dp"
+
+                                android:text="-birthdate- to -deathdate-" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1.5dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:background="#6c2c1f" />
+
+                            <TextView
+                                android:id="@+id/txtDeadAbout1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:justificationMode="inter_word"
+                                android:paddingLeft="30dp"
+                                android:paddingRight="10dp"
+                                android:text="-fullname-, a beloved of -guardfullname-, passed away peacefully on -Date of Death-, at the age of -computation of deathdate and birthdate-...."
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1.5dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="#6c2c1f" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <Button
+                                    android:id="@+id/btnVisitDead1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="40dp"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#8BAEBE"
+                                    android:gravity="center"
+                                    android:text="⬅️" />
+
+                                <Button
+                                    android:id="@+id/btnSendflower1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="40dp"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#f5b5c8"
+                                    android:text="💮" />
+
+                                <Button
+                                    android:id="@+id/btnSendLove1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="40dp"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#FE897F"
+                                    android:text="❤️" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="30dp"
+                    android:paddingTop="-10dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|top"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/shadow_all_sides"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView21"
+                            android:layout_width="190dp"
+                            android:layout_height="195dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/personimg" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtDisplayFullName2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:letterSpacing="0.1"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="5dp"
+                                android:text="-fullname-"
+                                android:textColor="#6c2c1f"
+                                android:textSize="19sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtDeadDate2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="5dp"
+
+                                android:text="-birthdate- to -deathdate-" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1.5dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:background="#6c2c1f" />
+
+                            <TextView
+                                android:id="@+id/txtDeadAbout2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:justificationMode="inter_word"
+                                android:paddingLeft="30dp"
+                                android:paddingRight="10dp"
+                                android:text="-fullname-, a beloved of -guardfullname-, passed away peacefully on -Date of Death-, at the age of -computation of deathdate and birthdate-...."
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1.5dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="#6c2c1f" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <Button
+                                    android:id="@+id/btnVisitDead2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="40dp"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#8BAEBE"
+                                    android:gravity="center"
+                                    android:text="⬅️" />
+
+                                <Button
+                                    android:id="@+id/btnSendflower2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="40dp"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#f5b5c8"
+                                    android:text="💮" />
+
+                                <Button
+                                    android:id="@+id/btnSendLove2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="40dp"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="#FE897F"
+                                    android:text="❤️" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    android:padding="0dp"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#6c2c1f"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/your_paragraph_text" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1.5dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="#FFFFFF" />
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="© 2024 St. Siomeow Funeral Services - CITU Chapel.\nAll Rights Reserved."
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
