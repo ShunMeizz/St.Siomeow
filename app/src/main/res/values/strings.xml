@@ -49,4 +49,35 @@
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
     <string name="title_activity_register">Register</string>
+    <string name="app_name">MobileDev_Project</string>
+    <string name="coffin1_name">Artisan - Brown Metal Casket</string>
+    <string name="coffin2_name">Farmer - Green Metal Casket</string>
+    <string name="coffin3_name">Praying Hands Spruce - Blue Metal Casket</string>
+    <string name="coffin4_name">PrimRose White with Pink Velvet Interior - Metal Casket</string>
+    <string name="coffin5_name">Sterling Copper with Ivory Velvet Interior - Metal Casket</string>
+    <string name="coffin6_name">White Cross Lords Prayer with White Velvet Interior - Metal Casket</string>
+    <string name="urn1_name">Adult Blessing Pearl Urn</string>
+    <string name="urn2_name">Butterfly Landing Token</string>
+    <string name="urn3_name">Grecian White Adult Cremation Urn</string>
+    <string name="urn4_name">Silver Fleur De Lis Urn Set</string>
+    <string name="urn5_name">Angel in Mourning Keepsake Urn</string>
+    <string name="urn6_name">Flying Doves Urn</string>
+    <string name="urn7_name">Grecian Blue Keepsake Heart</string>
+    <string name="urn8_name">Hummingbird Keepsake Cremation Pendant</string>
+    <string name="urn9_name">Serenity Cremation Pendant</string>
+    <string name="urn10_name">Tear Drop Keepsake Cremation Pendant</string>
+    <string name="flower1_name">Blossoming Heart</string>
+    <string name="flower2_name">Cherished Moments - Red</string>
+    <string name="flower3_name">Cherished Moments - Blue</string>
+    <string name="flower4_name">Divine Tribute Cross</string>
+    <string name="flower5_name">Eternal Friendship</string>
+    <string name="flower6_name">Love and Honor Wreath</string>
+    <string name="flower7_name">Lush Greenery Basket</string>
+    <string name="flower8_name">Peace Lily</string>
+    <string name="flower9_name">Peach Blessings Garden</string>
+    <string name="flower10_name">Splendid Life Spray</string>
+    <string name="flower11_name">Sympathy Garden</string>
+    <string name="flower12_name">Tranquil White Lillies Basket</string>
+    <string name="welcome_text">Welcome to St.Siomeow Funeral Home - UTIC Chapel</string>
+    <string name="credits">© 2024 St. Siomeow Funeral Services - CITU Chapel.\nAll Rights Reserved.</string>
 </resources>

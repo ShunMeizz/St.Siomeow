@@ -43,7 +43,10 @@ public class Register extends AppCompatActivity {
         cbAlum = (CheckBox) findViewById(R.id.cbRAlumni);
         regSignIn = (Button) findViewById(R.id.btn_rSignin);
         regSignUp = (Button) findViewById(R.id.btn_rSignup);
+
         auth = FirebaseAuth.getInstance();
+        FirebaseDatabase database;
+        DatabaseReference myRef;
 
         regSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +72,12 @@ public class Register extends AppCompatActivity {
         String address = regAdd.getText().toString().trim();
         String password = regPass.getText().toString().trim();
 
+        FirebaseUser firebaseUser = auth.getCurrentUser();
+        String uid = firebaseUser.getUid();
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Users").child(uid);
+
         if(TextUtils.isEmpty(firstName) || TextUtils.isEmpty(lastName)){
             Toast.makeText(Register.this, "User's name is empty!", Toast.LENGTH_SHORT).show();
             return;
@@ -86,42 +95,51 @@ public class Register extends AppCompatActivity {
             return;
         }
 
-        auth.createUserWithEmailAndPassword(remail, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    FirebaseUser firebaseUser = auth.getCurrentUser();
 
-                    if(firebaseUser != null){
-                        String uid = firebaseUser.getUid();
+        HelperClass hc = new HelperClass(uid, remail, password, address, firstName, lastName);
+        myRef.child(uid).setValue(hc);
 
-                        FirebaseDatabase database = FirebaseDatabase.getInstance();
-                        DatabaseReference myRef = database.getReference("Users").child(uid);
+        Toast.makeText(Register.this, "Registered successfully", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(Register.this, HomePage.class);
+        startActivity(intent);
+//        finish();
 
-                        HelperClass hcb = new HelperClassBuilder("User")
-                                .firstName(firstName)
-                                .lastName(lastName)
-                                .email(remail)
-                                .password(password)
-                                .address(address)
-                                .createHelperClass();
-                        myRef.setValue(hcb).addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if(task.isSuccessful()){
-                                    Toast.makeText(Register.this, "Registered successfully", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(Register.this, LogInPage.class);
-                                    startActivity(intent);
-                                    finish();
-                                } else{
-                                    Toast.makeText(Register.this, "Failed to register", Toast.LENGTH_SHORT).show();
-                                    return;
-                                }
-                            }
-                        });
-                    }
-                }
-            }
-        });
+//        auth.createUserWithEmailAndPassword(remail, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//            @Override
+//            public void onComplete(@NonNull Task<AuthResult> task) {
+//                if(task.isSuccessful()){
+//                    FirebaseUser firebaseUser = auth.getCurrentUser();
+//
+//                    if(firebaseUser != null){
+//                        String uid = firebaseUser.getUid();
+//
+//                        FirebaseDatabase database = FirebaseDatabase.getInstance();
+//                        DatabaseReference myRef = database.getReference("Users").child(uid);
+//
+////                        HelperClass hcb = new HelperClassBuilder("User")
+////                                .firstName(firstName)
+////                                .lastName(lastName)
+////                                .email(remail)
+////                                .password(password)
+////                                .address(address)
+////                                .createHelperClass();
+////                        myRef.setValue(hcb).addOnCompleteListener(new OnCompleteListener<Void>() {
+////                            @Override
+////                            public void onComplete(@NonNull Task<Void> task) {
+////                                if(task.isSuccessful()){
+//                                    Toast.makeText(Register.this, "Registered successfully", Toast.LENGTH_SHORT).show();
+//                                    Intent intent = new Intent(Register.this, LogInPage.class);
+//                                    startActivity(intent);
+//                                    finish();
+////                                } else{
+////                                    Toast.makeText(Register.this, "Failed to register", Toast.LENGTH_SHORT).show();
+////                                    return;
+////                                }
+////                            }
+////                        });
+//                    }
+//                }
+//            }
+//        });
     }
 }
