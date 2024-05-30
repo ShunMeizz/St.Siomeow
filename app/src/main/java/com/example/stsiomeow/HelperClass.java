@@ -14,8 +14,7 @@ public class HelperClass {
         this.isAlumni = isAlumni;
     }
 
-    public HelperClass(String user, String email, String pass, Boolean rememberMe){
-        this.user = user;
+    public HelperClass(String email, String pass, Boolean rememberMe){
         this.email = email;
         this.pass = pass;
         this.rememberMe = rememberMe;

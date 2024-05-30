@@ -56,7 +56,7 @@
                         android:layout_weight="1"
                         android:gravity="center|right"
                         android:letterSpacing="0.2"
-                        android:text="ORBITIARY OF MR. -lastname-"
+                        android:text="ORBITIARY OF MR. DOE"
                         android:textColor="#80000000"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -97,7 +97,7 @@
                         android:paddingLeft="20dp"
                         android:paddingTop="10dp"
                         android:paddingRight="20dp"
-                        android:text="-name sa namatay-"
+                        android:text="Johnathan Michael Doe"
                         android:textColor="@color/black"
                         android:textSize="24dp"
                         android:textStyle="bold" />
@@ -106,7 +106,7 @@
                         android:id="@+id/txtDeadDate"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="-date of birth- to -date of death- \n\n 'Be at rest for eternity in heaven' \n - Condolences from St. Siomeow"
+                        android:text="January 12, 1990 to May 30, 2024 \n\n 'Be at rest for eternity in heaven' \n - Condolences from St. Siomeow"
                         android:paddingLeft="20dp"
                         android:paddingRight="20dp"
                         android:paddingBottom="20dp"

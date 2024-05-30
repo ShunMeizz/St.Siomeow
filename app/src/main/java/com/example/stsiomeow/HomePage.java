@@ -1,4 +1,6 @@
 package com.example.stsiomeow;
+import static java.lang.System.exit;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -20,20 +22,22 @@ import android.widget.Toast;
 
 public class HomePage extends AppCompatActivity {
     ImageView menu, profile;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
-        menu = findViewById(R.id.menu_bar);
-        profile = findViewById(R.id.user_profile);
 
+        menu = (ImageView) findViewById(R.id.menu_bar);
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showPopupMenu(view);
             }
         });
+
+        profile = (ImageView) findViewById(R.id.user_profile);
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,14 +49,10 @@ public class HomePage extends AppCompatActivity {
         PopupMenu popupMenu = new PopupMenu(this, view);
         MenuInflater inflater = popupMenu.getMenuInflater();
         inflater.inflate(R.menu.choice_menu, popupMenu.getMenu());
-        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                return handleMenuItemClick(item);
-            }
-        });
+        popupMenu.setOnMenuItemClickListener(this::handleMenuItemClick);
         popupMenu.show();
     }
+
     private boolean handleMenuItemClick(@NonNull MenuItem item) {
         switch(item.getItemId()) {
             case R.id.mHome:
@@ -78,7 +78,7 @@ public class HomePage extends AppCompatActivity {
             case R.id.mLogOut:
                 Toast.makeText(this, "Log Out", Toast.LENGTH_SHORT).show();
                 finish();
-                return true;
+                System.exit(1);
             default:
                 return false;
         }

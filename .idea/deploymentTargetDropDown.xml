@@ -11,6 +11,12 @@
       <entry key="app">
         <State />
       </entry>
+      <entry key="form">
+        <State />
+      </entry>
+      <entry key="home">
+        <State />
+      </entry>
       <entry key="test2">
         <State />
       </entry>

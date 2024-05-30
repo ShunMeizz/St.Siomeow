@@ -1,5 +1,7 @@
 package com.example.stsiomeow;
 
+import static java.lang.System.exit;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
@@ -45,6 +48,7 @@ public class ImmediateNeedForm extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_immediate_need_form);
+
         btnSubmit = (Button) findViewById(R.id.btnFormSubmit);
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +57,7 @@ public class ImmediateNeedForm extends AppCompatActivity {
             }
         });
 
+        menu = (ImageView) findViewById(R.id.menu_bar);
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,6 +65,7 @@ public class ImmediateNeedForm extends AppCompatActivity {
             }
         });
 
+        profile = (ImageView) findViewById(R.id.user_profile);
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -86,6 +92,7 @@ public class ImmediateNeedForm extends AppCompatActivity {
         guard_number = (EditText) findViewById(R.id.guard_number);
     }
 
+    @SuppressLint("ResourceType")
     private void showPopupMenu(View view) {
         PopupMenu popupMenu = new PopupMenu(this, view);
         MenuInflater inflater = popupMenu.getMenuInflater();
@@ -124,7 +131,7 @@ public class ImmediateNeedForm extends AppCompatActivity {
             case R.id.mLogOut:
                 Toast.makeText(this, "Log Out", Toast.LENGTH_SHORT).show();
                 finish();
-                return true;
+                System.exit(1);
             default:
                 return false;
         }

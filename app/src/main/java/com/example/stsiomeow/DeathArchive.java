@@ -1,5 +1,7 @@
 package com.example.stsiomeow;
 
+import static java.lang.System.exit;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -152,7 +154,7 @@ public class DeathArchive extends AppCompatActivity {
             case R.id.mLogOut:
                 Toast.makeText(this, "Log Out", Toast.LENGTH_SHORT).show();
                 finish();
-                return true;
+                exit(1);
             default:
                 return false;
         }

@@ -98,7 +98,7 @@
                         android:gravity="center"
                         android:paddingLeft="20dp"
                         android:paddingRight="20dp"
-                        android:text="-name sa user-"
+                        android:text="Anashii"
                         android:textColor="@color/black"
                         android:textSize="24dp"
                         android:textStyle="bold" />
@@ -170,9 +170,10 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center|right"
                                 android:padding="20dp"
-                                android:text="-firstname-\n-middlename-\nlastname\n-birthdate-"
+                                android:text="Anna\nMarie\nAlimurung\n-December 25, 2024"
                                 android:textColor="#000000"
-                                android:textSize="16sp" />
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -216,9 +217,10 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center|right"
                                 android:padding="20dp"
-                                android:text="-emailadd-\nphonenumber\nhomeadd"
+                                android:text="anashii@gmail.com\n0912 345 6789\nTalisay, Cebu City"
                                 android:textColor="#000000"
-                                android:textSize="16sp" />
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
                         </LinearLayout>
                     </LinearLayout>
 

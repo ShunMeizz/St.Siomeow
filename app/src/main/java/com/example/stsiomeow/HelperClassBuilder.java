@@ -70,6 +70,6 @@ public class HelperClassBuilder {
     }
 
     public HelperClass loginHelperClass(){
-        return new HelperClass(user, email, pass, rememberMe);
+        return new HelperClass(email, pass, rememberMe);
     }
 }

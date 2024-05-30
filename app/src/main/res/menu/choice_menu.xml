@@ -12,7 +12,7 @@
                 android:title="Cremation" />
             <item
                 android:id="@+id/cFuneralRite"
-                android:title="Funeral Rite" />
+                android:title="Immediate Need Form" />
             <item
                 android:id="@+id/cSendFlowers"
                 android:title="Send Flowers" />
@@ -20,7 +20,7 @@
     </item>
     <item
         android:id="@+id/mOrbituary"
-        android:title="Orbituary" />
+        android:title="Death Archive" />
     <item
         android:id="@+id/mLogOut"
         android:title="LogOut" />

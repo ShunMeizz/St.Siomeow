@@ -205,7 +205,7 @@
                     android:textColor="@color/black"
                     app:cornerRadius="32dp" />
                 <RelativeLayout
-                    android:layout_width="228dp"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center">
 
@@ -223,6 +223,7 @@
                         android:layout_marginEnd="-11dp"
                         android:id="@+id/btn_rSignin"
                         android:text="Sign In"
+                        android:backgroundTint="#631C13"
                         android:textColor="@color/white"
                         android:textStyle="bold" />
 

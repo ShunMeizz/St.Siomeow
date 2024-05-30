@@ -27,7 +27,7 @@
             android:padding="8dp">
 
             <ImageView
-                android:id="@+id/iVMenu"
+                android:id="@+id/menu_bar"
                 android:layout_width="1dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
@@ -44,7 +44,7 @@
                 app:srcCompat="@drawable/siomeow_header" />
 
             <ImageView
-                android:id="@+id/iVUser"
+                android:id="@+id/user_profile"
                 android:layout_width="5dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -74,6 +74,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="280dp"
                 android:layout_marginTop="68dp"
+                android:scaleType="centerCrop"
                 app:srcCompat="@drawable/home_preview" />
 
             <TextView
@@ -122,6 +123,24 @@
                         android:textColor="#000000"
                         android:textSize="22sp"
                         android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1.5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="#979B9E" />
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:justificationMode="none"
+                        android:paddingTop="20dp"
+                        android:text="Welcome to St. Siomeow - Funeral Services, where we honor lives with compassion and dignity. At St. Siomeow, we understand that saying goodbye to a loved one is a profound moment, and we are here to support you through every step of the journey. Our dedicated team provides personalized and respectful funeral services, ensuring that each farewell is a meaningful tribute to a cherished life. With a commitment to excellence and a deep sense of empathy, we strive to create a comforting environment where families can find solace and peace during their time of need. Thank you for trusting us with your most precious memories."
+                        android:textColor="#000000" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -215,6 +234,50 @@
 
                     </LinearLayout>
 
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:padding="0dp"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#6c2c1f"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/your_paragraph_text" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1.5dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="#FFFFFF" />
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="© 2024 St. Siomeow Funeral Services - CITU Chapel.\nAll Rights Reserved."
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
