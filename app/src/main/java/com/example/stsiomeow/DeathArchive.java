@@ -1,4 +1,5 @@
 package com.example.stsiomeow;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuInflater;
@@ -123,6 +124,7 @@ public class DeathArchive extends AppCompatActivity {
         popupMenu.show();
     }
 
+//    @SuppressLint("NonConstantResourceId")
     private boolean handleMenuItemClick(@NonNull MenuItem item) {
         switch(item.getItemId()) {
             case R.id.mHome:

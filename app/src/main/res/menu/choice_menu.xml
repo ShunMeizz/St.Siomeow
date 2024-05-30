@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/mHome"
+        android:title="Home" />
+    <item
+        android:id="@+id/mServices"
+        android:title="Services">
+        <menu>
+            <item
+                android:id="@+id/cCremation"
+                android:title="Cremation" />
+            <item
+                android:id="@+id/cFuneralRite"
+                android:title="Funeral Rite" />
+            <item
+                android:id="@+id/cSendFlowers"
+                android:title="Send Flowers" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/mOrbituary"
+        android:title="Orbituary" />
+    <item
+        android:id="@+id/mLogOut"
+        android:title="LogOut" />
+</menu>

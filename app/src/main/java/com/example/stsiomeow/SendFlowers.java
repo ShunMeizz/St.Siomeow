@@ -45,7 +45,7 @@ public class SendFlowers extends AppCompatActivity {
         userProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SendFlowers.this, UserProfile));
+                startActivity(new Intent(SendFlowers.this, UserProfile.class));
             }
         });
         btnDialogCancel.setOnClickListener(new View.OnClickListener() {
