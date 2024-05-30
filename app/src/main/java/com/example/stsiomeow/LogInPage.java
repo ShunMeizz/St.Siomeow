@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -65,9 +66,13 @@ public class LogInPage extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     if(linrememberMe.isChecked()){
-                        sph.edit().putBoolean("rememberMe", true);
+                        sph.edit().putBoolean("rememberMe", true).putString("Email", email).putString("Password", password).apply();
+                    } else {
+                        sph.edit().clear().apply();
                     }
                 }
+
+                Intent intent = new Intent(LogInPage.this, MainActivity.class);
             }
         });
     }
